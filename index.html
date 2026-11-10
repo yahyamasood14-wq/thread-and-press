@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THREAD & PRESS | Apparel Manufacturing, Free Vectorizer & Photo Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fffbe1',
+                            100: '#fef7c3',
+                            500: '#d97706',
+                            600: '#b45309',
+                            gold: '#d97706',
+                            emerald: '#059669',
+                            dark: '#0f172a',
+                            light: '#f8fafc',
+                            card: '#ffffff',
+                            border: '#e2e8f0'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .light-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+        }
+        .light-card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .light-card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px -4px rgba(15, 23, 42, 0.1);
+            border-color: #cbd5e1;
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #b45309 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-badge {
+            background: rgba(217, 119, 6, 0.08);
+            border: 1px solid rgba(217, 119, 6, 0.25);
+            color: #b45309;
+        }
+        .emerald-badge {
+            background: rgba(5, 150, 105, 0.08);
+            border: 1px solid rgba(5, 150, 105, 0.25);
+            color: #047857;
+        }
+        @keyframes pulse-subtle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        .animate-float {
+            animation: pulse-subtle 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-amber-500 selection:text-white">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-amber-600 rounded-xl flex items-center justify-center font-display font-bold text-white text-xl shadow-md shadow-amber-600/20">
+                    TP
+                </div>
+                <span class="font-display font-bold text-xl tracking-tight text-slate-900">THREAD <span class="text-amber-600">&amp;</span> PRESS</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+                <a href="#catalog" class="hover:text-amber-600 transition-colors">Products</a>
+                <a href="#vector-studio" class="hover:text-amber-600 transition-colors">Free Vectorizer</a>
+                <a href="#studio" class="hover:text-amber-600 transition-colors">Adjoining Photo Studio</a>
+                <a href="#estimator" class="hover:text-amber-600 transition-colors">Quote Estimator</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="#estimator" class="px-5 py-2.5 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-xl text-sm transition-all shadow-md shadow-amber-600/10 flex items-center gap-2">
+                    <i class="fa-solid fa-calculator text-xs"></i> Quote Engine
+                </a>
+            </div>
+
+            <button id="mobileMenuBtn" class="md:hidden text-slate-700 text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 py-6 space-y-4">
+            <a href="#catalog" class="block text-slate-700 hover:text-amber-600 py-1 font-medium">Products &amp; Blanks</a>
+            <a href="#vector-studio" class="block text-slate-700 hover:text-amber-600 py-1 font-medium">Free Vectorizer</a>
+            <a href="#studio" class="block text-slate-700 hover:text-amber-600 py-1 font-medium">Adjoining Photo Studio</a>
+            <a href="#estimator" class="block text-slate-700 hover:text-amber-600 py-1 font-medium">Quote Estimator</a>
+            <a href="#estimator" class="block w-full text-center px-5 py-2.5 bg-amber-600 text-white font-bold rounded-xl text-sm">Quote Engine (PKR)</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden py-16 lg:py-24 bg-gradient-to-b from-slate-100 via-white to-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full emerald-badge text-xs font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-gift text-emerald-600"></i> Free First Artwork Vector Conversion Included
+                    </div>
+                    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                        Upload Any Sketch &amp; Get a <span class="text-gradient">Print-Ready Vector Download</span>
+                    </h1>
+                    <p class="text-slate-600 text-base sm:text-lg max-w-2xl font-normal leading-relaxed">
+                        Upload your artwork or photo. We clean the background and convert it to a 300 DPI high-res print file for download. **First design upload is 100% FREE!**
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="#vector-studio" class="px-8 py-3.5 bg-amber-600 hover:bg-amber-500 text-white font-bold rounded-xl text-sm shadow-xl shadow-amber-600/20 transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-wand-magic-sparkles text-xs"></i> Upload &amp; Convert (1st Free)
+                        </a>
+                        <a href="#estimator" class="px-8 py-3.5 bg-white hover:bg-slate-100 text-slate-800 font-semibold rounded-xl text-sm transition-all border border-slate-300 shadow-sm flex items-center gap-2">
+                            <i class="fa-solid fa-calculator text-amber-600"></i> Calculate Full Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive Hero Showcase -->
+                <div class="lg:col-span-5">
+                    <div class="light-card rounded-2xl p-6 shadow-xl relative border border-slate-200 bg-white">
+                        <div class="flex justify-between items-center mb-4">
+                            <span id="heroGarmentTitle" class="font-display font-bold text-lg text-slate-900">380 GSM Heavy French Terry Hoodie</span>
+                            <span class="emerald-badge px-2.5 py-1 rounded text-xs font-semibold">1st Design Free</span>
+                        </div>
+                        
+                        <div class="bg-slate-100/70 rounded-xl p-8 flex flex-col items-center justify-center min-h-[300px] border border-slate-200 relative">
+                            <i id="heroGarmentIcon" class="fa-solid fa-shirt text-9xl text-slate-800 transition-all duration-300 animate-float"></i>
+                            <div class="absolute bottom-3 left-3 right-3 flex justify-between items-center bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-200">
+                                <span class="text-xs text-slate-600 font-medium">Selected Color:</span>
+                                <span id="heroColorName" class="text-xs font-bold text-slate-900">Charcoal Black</span>
+                            </div>
+                        </div>
+
+                        <!-- Color Swatch Controller -->
+                        <div class="mt-4 pt-2">
+                            <p class="text-xs font-semibold text-slate-500 mb-2">TRY LIVE COLOR SWATCHES:</p>
+                            <div class="flex items-center gap-3">
+                                <button onclick="changeHeroColor('#1e293b', 'Charcoal Black')" class="w-8 h-8 rounded-full bg-slate-800 ring-2 ring-amber-500 ring-offset-2 transition-transform hover:scale-110 shadow-sm" title="Charcoal Black"></button>
+                                <button onclick="changeHeroColor('#ffffff', 'Vintage Cream')" class="w-8 h-8 rounded-full bg-white border border-slate-300 transition-transform hover:scale-110 shadow-sm" title="Vintage Cream"></button>
+                                <button onclick="changeHeroColor('#047857', 'Sage Emerald')" class="w-8 h-8 rounded-full bg-emerald-700 transition-transform hover:scale-110 shadow-sm" title="Sage Emerald"></button>
+                                <button onclick="changeHeroColor('#1e3a8a', 'Washed Navy')" class="w-8 h-8 rounded-full bg-blue-900 transition-transform hover:scale-110 shadow-sm" title="Washed Navy"></button>
+                                <button onclick="changeHeroColor('#b45309', 'Rust Amber')" class="w-8 h-8 rounded-full bg-amber-700 transition-transform hover:scale-110 shadow-sm" title="Rust Amber"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VECTOR PROCESSING & DOWNLOAD SECTION -->
+    <section id="vector-studio" class="py-20 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="emerald-badge px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                    <i class="fa-solid fa-gift mr-1"></i> Special Launch Promo
+                </span>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 mt-3">Upload Artwork &amp; Download Print-Ready PNG</h2>
+                <p class="text-slate-600 mt-2 text-sm">Upload any photo or sketch. Use the controls to adjust contrast and strip away backgrounds, then download your 300 DPI transparent print file. **First conversion is 100% FREE!**</p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 items-start">
+                <!-- Upload & Processing Controls -->
+                <div class="lg:col-span-5 light-card p-6 rounded-2xl bg-slate-50 border border-slate-200">
+                    <h3 class="font-display font-bold text-lg text-slate-900 mb-4 flex items-center justify-between">
+                        <span>Artwork Upload Studio</span>
+                        <span class="emerald-badge px-2.5 py-0.5 rounded text-[11px] font-extrabold uppercase">1st Upload FREE</span>
+                    </h3>
+
+                    <div class="mb-6">
+                        <label class="block text-xs font-bold text-slate-700 mb-2">1. SELECT IMAGE / SKETCH FILE</label>
+                        <input type="file" id="imageInput" accept="image/*" class="w-full bg-white border border-slate-300 rounded-xl p-2.5 text-xs text-slate-700 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-amber-600 file:text-white hover:file:bg-amber-500 cursor-pointer">
+                    </div>
+
+                    <div class="space-y-4 pt-4 border-t border-slate-200">
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold text-slate-700 mb-1">
+                                <span>Background Removal Threshold:</span>
+                                <span id="bgVal">120</span>
+                            </div>
+                            <input type="range" id="bgSlider" min="0" max="250" value="120" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-amber-600">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold text-slate-700 mb-1">
+                                <span>Contrast &amp; Edge Sharpness:</span>
+                                <span id="contrastVal">1.2</span>
+                            </div>
+                            <input type="range" id="contrastSlider" min="1" max="3" step="0.1" value="1.2" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-amber-600">
+                        </div>
+                    </div>
+
+                    <button onclick="downloadVectorPNG()" class="w-full mt-6 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-sm transition-all shadow-md shadow-emerald-600/20 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-download"></i> Download 300 DPI Transparent File (FREE)
+                    </button>
+                </div>
+
+                <!-- Live Preview Canvas -->
+                <div class="lg:col-span-7 light-card p-6 rounded-2xl bg-white border border-slate-200 flex flex-col items-center">
+                    <div class="w-full flex justify-between items-center mb-4">
+                        <span class="text-xs font-bold text-slate-700 uppercase tracking-wider">Live Vectorization &amp; Print Preview</span>
+                        <span class="text-[11px] text-slate-400 font-mono">Status: Ready for Processing</span>
+                    </div>
+
+                    <div class="w-full min-h-[300px] bg-slate-100 rounded-xl border border-dashed border-slate-300 flex items-center justify-center p-4 relative overflow-hidden">
+                        <canvas id="previewCanvas" class="max-w-full max-h-[320px] object-contain hidden"></canvas>
+                        <div id="placeholderText" class="text-center space-y-2">
+                            <i class="fa-solid fa-cloud-arrow-up text-4xl text-slate-400"></i>
+                            <p class="text-xs font-semibold text-slate-500">Upload a JPG, PNG, or photo of your sketch to view live conversion</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Catalog Section -->
+    <section id="catalog" class="py-20 bg-slate-100/80 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-amber-600 text-xs font-bold uppercase tracking-wider">Garment Catalog</span>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 mt-1">Streetwear &amp; Apparel Blanks</h2>
+                </div>
+                <div class="mt-4 md:mt-0 flex gap-2">
+                    <button onclick="filterCategory('all')" class="cat-btn active border px-4 py-2 rounded-xl text-xs font-bold bg-amber-600 text-white shadow-sm">All Garments</button>
+                    <button onclick="filterCategory('tshirt')" class="cat-btn border px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 hover:bg-slate-200">T-Shirts</button>
+                    <button onclick="filterCategory('hoodie')" class="cat-btn border px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 hover:bg-slate-200">Hoodies</button>
+                </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="prod-card tshirt light-card light-card-hover rounded-2xl p-5 flex flex-col justify-between">
+                    <div>
+                        <div class="bg-slate-100 rounded-xl p-6 text-center mb-4 border border-slate-200 relative">
+                            <span class="absolute top-2 left-2 text-[10px] font-bold px-2 py-0.5 rounded bg-white text-slate-700 border border-slate-200">180 GSM</span>
+                            <i class="fa-solid fa-shirt text-6xl text-slate-800"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-base text-slate-900">180 GSM Crewneck Tee</h3>
+                        <p class="text-xs text-slate-500 mt-1">100% Combed Cotton. Soft touch ideal for daily collections.</p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center">
+                        <div>
+                            <span class="text-[10px] text-slate-400 block font-semibold">BASE RATE</span>
+                            <span class="font-display font-bold text-base text-amber-600">PKR 650</span>
+                        </div>
+                        <button onclick="selectProductForQuote(650, '180 GSM Crewneck Tee')" class="px-3.5 py-2 bg-slate-900 hover:bg-amber-600 text-white font-bold rounded-lg text-xs transition-colors">Select</button>
+                    </div>
+                </div>
+
+                <div class="prod-card tshirt light-card light-card-hover rounded-2xl p-5 flex flex-col justify-between">
+                    <div>
+                        <div class="bg-slate-100 rounded-xl p-6 text-center mb-4 border border-slate-200 relative">
+                            <span class="absolute top-2 left-2 text-[10px] font-bold px-2 py-0.5 rounded gold-badge">240 GSM Heavy</span>
+                            <i class="fa-solid fa-shirt text-6xl text-slate-900"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-base text-slate-900">240 GSM Heavy Boxy Tee</h3>
+                        <p class="text-xs text-slate-500 mt-1">Heavyweight cotton with drop-shoulder streetwear fit.</p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center">
+                        <div>
+                            <span class="text-[10px] text-slate-400 block font-semibold">BASE RATE</span>
+                            <span class="font-display font-bold text-base text-amber-600">PKR 950</span>
+                        </div>
+                        <button onclick="selectProductForQuote(950, '240 GSM Heavy Boxy Tee')" class="px-3.5 py-2 bg-slate-900 hover:bg-amber-600 text-white font-bold rounded-lg text-xs transition-colors">Select</button>
+                    </div>
+                </div>
+
+                <div class="prod-card hoodie light-card light-card-hover rounded-2xl p-5 flex flex-col justify-between">
+                    <div>
+                        <div class="bg-slate-100 rounded-xl p-6 text-center mb-4 border border-slate-200 relative">
+                            <span class="absolute top-2 left-2 text-[10px] font-bold px-2 py-0.5 rounded bg-white text-slate-700 border border-slate-200">320 GSM Fleece</span>
+                            <i class="fa-solid fa-shirt text-6xl text-slate-700"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-base text-slate-900">320 GSM Pullover Hoodie</h3>
+                        <p class="text-xs text-slate-500 mt-1">Brushed fleece interior with pouch pocket &amp; ribbed cuffs.</p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center">
+                        <div>
+                            <span class="text-[10px] text-slate-400 block font-semibold">BASE RATE</span>
+                            <span class="font-display font-bold text-base text-amber-600">PKR 1,850</span>
+                        </div>
+                        <button onclick="selectProductForQuote(1850, '320 GSM Pullover Hoodie')" class="px-3.5 py-2 bg-slate-900 hover:bg-amber-600 text-white font-bold rounded-lg text-xs transition-colors">Select</button>
+                    </div>
+                </div>
+
+                <div class="prod-card hoodie light-card light-card-hover rounded-2xl p-5 flex flex-col justify-between">
+                    <div>
+                        <div class="bg-slate-100 rounded-xl p-6 text-center mb-4 border border-slate-200 relative">
+                            <span class="absolute top-2 left-2 text-[10px] font-bold px-2 py-0.5 rounded gold-badge">380 GSM Terry</span>
+                            <i class="fa-solid fa-shirt text-6xl text-amber-700"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-base text-slate-900">380 GSM Heavy French Terry Hoodie</h3>
+                        <p class="text-xs text-slate-500 mt-1">Luxury heavy French Terry cotton with boxy streetwear silhouette.</p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center">
+                        <div>
+                            <span class="text-[10px] text-slate-400 block font-semibold">BASE RATE</span>
+                            <span class="font-display font-bold text-base text-amber-600">PKR 2,450</span>
+                        </div>
+                        <button onclick="selectProductForQuote(2450, '380 GSM Heavy French Terry Hoodie')" class="px-3.5 py-2 bg-slate-900 hover:bg-amber-600 text-white font-bold rounded-lg text-xs transition-colors">Select</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Adjoining Photoshoot Studio Section -->
+    <section id="studio" class="py-20 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="gold-badge px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Content Facility</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 mt-3">Adjoining Photoshoot Studio Rental</h2>
+                <p class="text-slate-600 mt-2 text-sm">Step right from our manufacturing floor into our professional photo studio to shoot your campaign.</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <div class="light-card rounded-2xl p-8 bg-white border border-slate-200 relative flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-amber-600/10 text-amber-600 rounded-xl flex items-center justify-center font-bold text-xl mb-6">
+                            <i class="fa-solid fa-camera font-bold"></i>
+                        </div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-display font-bold text-2xl text-slate-900">E-Commerce &amp; Campaign Photo Studio</h3>
+                            <span class="emerald-badge px-2.5 py-1 rounded text-xs font-bold">Best Value Package</span>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Fully equipped studio located right next to our printing facility. Complete with strobes, backdrops, steamers, and rolling racks.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="bg-amber-50 p-4 rounded-xl border border-amber-200 text-xs">
+                                <span class="text-amber-800 block font-semibold text-[10px]">FULL-DAY SHIFT (8 HOURS)</span>
+                                <span class="font-bold text-amber-700 text-xl">PKR 15,000</span>
+                            </div>
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs">
+                                <span class="text-slate-400 block font-semibold text-[10px]">HOURLY SLOT (MIN. 2 HRS)</span>
+                                <span class="font-bold text-slate-900 text-xl">PKR 2,500 / hr</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="toggleStudioAddon()" id="studioAddonBtn" class="w-full py-4 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl text-sm transition-all shadow-sm">
+                        + Add 8-Hour Full-Day Studio (PKR 15,000) to Production Quote
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Instant Quote Estimator -->
+    <section id="estimator" class="py-20 bg-slate-100/90 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="gold-badge px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Instant Quote Calculator</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 mt-3">Interactive Bulk Production Estimator</h2>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 items-start">
+                <div class="lg:col-span-7 light-card p-6 sm:p-8 rounded-2xl bg-white">
+                    <form id="calculatorForm" class="space-y-6">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">1. Select Blank Garment</label>
+                            <select id="estGarment" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:border-amber-600 font-medium">
+                                <option value="650">180 GSM Crewneck Tee (PKR 650 base)</option>
+                                <option value="950">240 GSM Heavyweight Boxy Tee (PKR 950 base)</option>
+                                <option value="1850">320 GSM Fleece Pullover Hoodie (PKR 1,850 base)</option>
+                                <option value="2450" selected>380 GSM Heavy French Terry Hoodie (PKR 2,450 base)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">2. Printing Method</label>
+                            <select id="estPrint" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:border-amber-600 font-medium">
+                                <option value="200">High-Definition DTF Print (+PKR 200/pc)</option>
+                                <option value="350" selected>3D Puff / Raised Rubber Print (+PKR 350/pc)</option>
+                                <option value="150">Screen Print - Plastisol (+PKR 150/pc)</option>
+                                <option value="300">High-Density Embroidery (+PKR 300/pc)</option>
+                                <option value="0">Blank Garments Only (No Print)</option>
+                            </select>
+                        </div>
+
+                        <!-- Vector Conversion Add-On Toggle -->
+                        <div class="p-4 bg-emerald-50/70 rounded-xl border border-emerald-200 space-y-3">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-emerald-800">
+                                <i class="fa-solid fa-gift mr-1"></i> 3. First Artwork Vector Conversion
+                            </label>
+                            <div class="flex items-center justify-between bg-white p-3 rounded-lg border border-slate-200">
+                                <span class="text-xs font-semibold text-slate-800">1st Upload Design Vectorizing</span>
+                                <span class="text-xs font-extrabold text-emerald-600 uppercase">FREE (PKR 0)</span>
+                            </div>
+                        </div>
+
+                        <!-- Studio Add-on -->
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-3">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700">4. Adjoining Photo Studio Booking</label>
+                            <label class="flex items-center justify-between bg-white p-3 rounded-lg border border-slate-200 cursor-pointer">
+                                <span class="flex items-center gap-2 text-xs font-semibold text-slate-800">
+                                    <input type="checkbox" id="chkStudio" class="accent-amber-600 w-4 h-4">
+                                    <span>Full-Day Studio Rental (8 Hours)</span>
+                                </span>
+                                <span class="text-xs font-bold text-amber-700">+PKR 15,000</span>
+                            </label>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label class="text-xs font-bold uppercase tracking-wider text-slate-700">5. Order Quantity (Units)</label>
+                                <span id="qtyVal" class="font-mono text-amber-600 font-bold text-lg">50 Units</span>
+                            </div>
+                            <input type="range" id="estQty" min="20" max="500" step="5" value="50" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-amber-600">
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Summary Panel -->
+                <div class="lg:col-span-5 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-xl sticky top-28">
+                    <span class="gold-badge px-2.5 py-1 rounded text-[10px] font-bold tracking-widest uppercase">Summary</span>
+                    <h3 class="font-display font-bold text-2xl text-slate-900 mt-2 mb-6">Quote Breakdown</h3>
+
+                    <div class="space-y-3 border-b border-slate-200 pb-6 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-slate-500">Garment Base Rate:</span>
+                            <span id="summaryBase" class="font-mono font-bold text-slate-900">PKR 2,450 / pc</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-slate-500">Printing Method:</span>
+                            <span id="summaryPrint" class="font-mono font-bold text-slate-900">PKR 350 / pc</span>
+                        </div>
+                        <div class="flex justify-between text-emerald-600 font-medium">
+                            <span>1st Vector Conversion:</span>
+                            <span class="font-mono font-bold uppercase">FREE</span>
+                        </div>
+                        <div class="flex justify-between text-amber-600 font-medium">
+                            <span>Adjoining Studio (8 Hrs):</span>
+                            <span id="summarySpaceAddon" class="font-mono font-bold">PKR 0</span>
+                        </div>
+                    </div>
+
+                    <div class="py-6 space-y-3">
+                        <div class="flex justify-between items-baseline">
+                            <span class="text-slate-600 text-sm font-semibold">Per Garment Cost:</span>
+                            <span id="finalUnitRate" class="font-display font-extrabold text-2xl text-amber-600">PKR 2,660</span>
+                        </div>
+                        <div class="flex justify-between items-baseline pt-3 border-t border-slate-200">
+                            <span class="text-slate-900 font-extrabold text-lg">Total Production Quote:</span>
+                            <span id="finalTotalRate" class="font-display font-extrabold text-3xl text-slate-900">PKR 133,000</span>
+                        </div>
+                    </div>
+
+                    <button onclick="sendWhatsAppOrder()" class="w-full py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-sm transition-all shadow-lg shadow-emerald-600/20 flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Confirm &amp; Send Order via WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white text-slate-500 py-10 border-t border-slate-200 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div>
+                <p class="text-slate-900 font-bold text-sm">THREAD &amp; PRESS APPAREL STUDIO</p>
+                <p class="text-slate-500 mt-1">Sourcing, Printing Facility, Design Vectorizing &amp; Adjoining Studio | Pakistan</p>
+            </div>
+            <p class="text-slate-400">&copy; 2026 Thread &amp; Press Studio. All costs in PKR.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Engine & Canvas Script -->
+    <script>
+        const estGarment = document.getElementById('estGarment');
+        const estPrint = document.getElementById('estPrint');
+        const estQty = document.getElementById('estQty');
+        const qtyVal = document.getElementById('qtyVal');
+        const chkStudio = document.getElementById('chkStudio');
+
+        const summaryBase = document.getElementById('summaryBase');
+        const summaryPrint = document.getElementById('summaryPrint');
+        const summarySpaceAddon = document.getElementById('summarySpaceAddon');
+        const finalUnitRate = document.getElementById('finalUnitRate');
+        const finalTotalRate = document.getElementById('finalTotalRate');
+
+        // Canvas Vectorizer Engine
+        const imageInput = document.getElementById('imageInput');
+        const previewCanvas = document.getElementById('previewCanvas');
+        const placeholderText = document.getElementById('placeholderText');
+        const bgSlider = document.getElementById('bgSlider');
+        const contrastSlider = document.getElementById('contrastSlider');
+        const bgVal = document.getElementById('bgVal');
+        const contrastVal = document.getElementById('contrastVal');
+
+        let loadedImage = null;
+
+        imageInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    loadedImage = new Image();
+                    loadedImage.onload = () => {
+                        placeholderText.classList.add('hidden');
+                        previewCanvas.classList.remove('hidden');
+                        processImage();
+                    };
+                    loadedImage.src = event.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        function processImage() {
+            if (!loadedImage) return;
+
+            const ctx = previewCanvas.getContext('2d');
+            previewCanvas.width = loadedImage.width;
+            previewCanvas.height = loadedImage.height;
+
+            ctx.drawImage(loadedImage, 0, 0);
+
+            const imgData = ctx.getImageData(0, 0, previewCanvas.width, previewCanvas.height);
+            const data = imgData.data;
+
+            const threshold = parseInt(bgSlider.value);
+            const contrast = parseFloat(contrastSlider.value);
+            bgVal.innerText = threshold;
+            contrastVal.innerText = contrast;
+
+            for (let i = 0; i < data.length; i += 4) {
+                let r = data[i];
+                let g = data[i + 1];
+                let b = data[i + 2];
+
+                r = Math.min(255, Math.max(0, (r - 128) * contrast + 128));
+                g = Math.min(255, Math.max(0, (g - 128) * contrast + 128));
+                b = Math.min(255, Math.max(0, (b - 128) * contrast + 128));
+
+                if (r > threshold && g > threshold && b > threshold) {
+                    data[i + 3] = 0;
+                } else {
+                    data[i] = r;
+                    data[i + 1] = g;
+                    data[i + 2] = b;
+                }
+            }
+
+            ctx.putImageData(imgData, 0, 0);
+        }
+
+        bgSlider.addEventListener('input', processImage);
+        contrastSlider.addEventListener('input', processImage);
+
+        function downloadVectorPNG() {
+            if (!loadedImage) {
+                alert('Please upload an image or sketch first!');
+                return;
+            }
+            const link = document.createElement('a');
+            link.download = 'print_ready_vector_art.png';
+            link.href = previewCanvas.toDataURL('image/png');
+            link.click();
+        }
+
+        // Calculation Engine
+        let currentUnitRate = 0;
+        let currentGrandTotal = 0;
+
+        function calculateQuote() {
+            const qty = parseInt(estQty.value);
+            qtyVal.innerText = `${qty} Units`;
+
+            const baseCost = parseInt(estGarment.value);
+            const printCost = parseInt(estPrint.value);
+
+            let fixedOneTimeAddons = 0;
+            if (chkStudio.checked) fixedOneTimeAddons += 15000;
+
+            let discountPercent = 0;
+            if (qty >= 500) discountPercent = 0.25;
+            else if (qty >= 250) discountPercent = 0.18;
+            else if (qty >= 100) discountPercent = 0.10;
+            else if (qty >= 50) discountPercent = 0.05;
+
+            const subtotalPerUnit = baseCost + printCost;
+            currentUnitRate = Math.round(subtotalPerUnit * (1 - discountPercent));
+            const totalGarmentsCost = currentUnitRate * qty;
+            currentGrandTotal = totalGarmentsCost + fixedOneTimeAddons;
+
+            summaryBase.innerText = `PKR ${baseCost.toLocaleString()} / pc`;
+            summaryPrint.innerText = `PKR ${printCost.toLocaleString()} / pc`;
+            summarySpaceAddon.innerText = chkStudio.checked ? `+PKR 15,000` : `PKR 0`;
+
+            finalUnitRate.innerText = `PKR ${currentUnitRate.toLocaleString()}`;
+            finalTotalRate.innerText = `PKR ${currentGrandTotal.toLocaleString()}`;
+        }
+
+        [estGarment, estPrint, estQty, chkStudio].forEach(el => {
+            if (el) el.addEventListener('input', calculateQuote);
+        });
+
+        // WhatsApp Direct Order Functionality
+        function sendWhatsAppOrder() {
+            const garmentText = estGarment.options[estGarment.selectedIndex].text;
+            const printText = estPrint.options[estPrint.selectedIndex].text;
+            const qty = estQty.value;
+            const studioBooked = chkStudio.checked ? "Yes (8-Hour Shift @ PKR 15,000)" : "No";
+
+            const message = `Hello Thread & Press! I would like to place an order based on your online quote estimator:%0A%0A` +
+                            `• *Garment*: ${garmentText}%0A` +
+                            `• *Printing*: ${printText}%0A` +
+                            `• *Vectorization*: 1st Design FREE%0A` +
+                            `• *Adjoining Studio*: ${studioBooked}%0A` +
+                            `• *Quantity*: ${qty} Units%0A` +
+                            `• *Estimated Unit Price*: PKR ${currentUnitRate.toLocaleString()}%0A` +
+                            `• *Total Order Quote*: PKR ${currentGrandTotal.toLocaleString()}%0A%0A` +
+                            `Please guide me on sending my artwork files and confirming payment/production!`;
+
+            // Replace 923001234567 with your actual WhatsApp business phone number
+            const phoneNumber = "923001234567";
+            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+        }
+
+        function changeHeroColor(colorCode, colorTitle) {
+            const icon = document.getElementById('heroGarmentIcon');
+            const colorLabel = document.getElementById('heroColorName');
+            if (icon) icon.style.color = colorCode;
+            if (colorLabel) colorLabel.innerText = colorTitle;
+        }
+
+        function filterCategory(cat) {
+            const cards = document.querySelectorAll('.prod-card');
+            cards.forEach(c => {
+                if (cat === 'all' || c.classList.contains(cat)) {
+                    c.style.display = 'flex';
+                } else {
+                    c.style.display = 'none';
+                }
+            });
+        }
+
+        function selectProductForQuote(rate, title) {
+            estGarment.value = rate;
+            calculateQuote();
+            document.getElementById('estimator').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function toggleStudioAddon() {
+            chkStudio.checked = !chkStudio.checked;
+            calculateQuote();
+            document.getElementById('estimator').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        calculateQuote();
+    </script>
+</body>
+</html>
